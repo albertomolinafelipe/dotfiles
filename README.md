@@ -5,7 +5,7 @@
 ```bash
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt install git keepassxc dunst neofetch zsh curl feh neovim firefox-esr eza
+sudo apt install git keepassxc dunst neofetch zsh curl feh neovim firefox-esr eza g++
 chsh -s $(which zsh)
 ```
 
