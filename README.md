@@ -1,4 +1,4 @@
-# Install script to set up Debian machine
+# Installs for Debian machine
 
 ## APT Packages
 
