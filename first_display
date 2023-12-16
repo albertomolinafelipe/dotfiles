@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cp ~/dotfiles/.Xresources ~/.Xresources
+cp ~/dotfiles/.xinitrc ~/.xinitrc
+
+cp ~/dotfiles/config_first_display.h ~/.config/suckless/st/config.h
+
+cd ~/.config/suckless/st
+sudo make clean install
+

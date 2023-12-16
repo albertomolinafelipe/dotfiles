@@ -42,7 +42,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ " ",      tile },    /* first entry is default */
+	{ " ",      tile },    /* first entry is default */
 	{ "[f]",      NULL },    /* no layout function means floating behavior */
 	{ "[m]",      monocle },
 };
@@ -61,10 +61,17 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", sumiInk1, "-nf", col_gray3, "-sb", sumiInk2, "-sf", col_gray4, NULL };
+
+// Apps
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = {"firefox", NULL};
 static const char *obsidiancmd[]  = {"obsidian", NULL};
 static const char *signalcmd[]  = {"signal-desktop", NULL};
+// Volumes
+static const char *volupcmd[] = {"amixer", "set", "Master", "5%+", NULL};
+static const char *voldowncmd[] = {"amixer", "set", "Master", "5%-", NULL};
+static const char *mutecmd[] = {"amixer", "set", "Master", "toggle", NULL};
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -73,6 +80,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_o,      spawn,          {.v = obsidiancmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = signalcmd } },
+	{ ShiftMask, XK_F5, spawn, {.v = mutecmd } },
+	{ ShiftMask, XK_F6, spawn, {.v = voldowncmd } },
+	{ ShiftMask, XK_F7, spawn, {.v = volupcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cp ~/dotfiles/.Xresources_second_display ~/.Xresources
+cp ~/dotfiles/.xinitrc_second_display ~/.xinitrc
+
+cp ~/dotfiles/config_second_display.h ~/.config/suckless/st/config.h
+
+cd ~/.config/suckless/st
+sudo make clean install
+
