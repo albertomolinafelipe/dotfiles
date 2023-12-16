@@ -4,6 +4,6 @@ xrandr --output DP-4 --auto --output eDP-1 --off # Add this line
 exec slstatus &
 feh --bg-fill ~/dotfiles/wallpaper.png &
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY &
-exec dunst &
+exec battery_notification &
 exec dwm
 
